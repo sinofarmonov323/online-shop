@@ -7,3 +7,4 @@ flask-admin
 wtforms==2.3.3
 flask-cors
 gunicorn
+PIL
