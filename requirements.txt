@@ -6,3 +6,4 @@ flask-wtf
 flask-admin
 wtforms
 flask-cors
+gunicorn
