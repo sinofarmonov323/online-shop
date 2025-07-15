@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form action="/login" method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }}: {{ form.name }} <br>
+        {{ form.username.label }}: {{ form.username }} <br>
+        {{ form.password.label }}: {{ form.password }} <br>
+        {{ form.submit }}
+    </form>
+</body>
+</html>

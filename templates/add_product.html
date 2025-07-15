@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/add_product" method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {{ form.image.label }}: {{ form.image }}<br>
+        {{ form.name.label }}: {{ form.name }} <br>
+        {{ form.price.label }}: {{ form.price }} <br>
+        {{ form.short_description.label }}: {{ form.short_description }} <br>
+        {{ form.submit() }}
+    </form>
+</body>
+</html>

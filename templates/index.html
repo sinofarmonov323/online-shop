@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Market</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <header>
+            <div class="navigation">
+                <div class="container">
+                    <a href="/" class="logo"><h1>Shopping Market</h1></a>
+                </div>
+                <div class="circle-profile">
+                    <div class="circle-profile-menu">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                            <li><a href="/add_product">add Product</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            {% for product in products %}
+            <a href="/product/{{ product.id }}" class="link">
+                <div class="main-part">
+                    <div class="wrapper">
+                        <div class="box">
+                            <img src="uploads/images/{{ product.image }}" alt="there is an image" width="200" height="200">
+                            <h3 title="{{ product.name }}" class="title">{{ product.name }}</h3>
+                            <p>{{ product.price }}</p>
+                            <p>{{ product.short_description | truncate(30) }}</p>
+                            <a href="/product/{{ product.id }}">More</a>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </main>
+    {% else %}
+    <h1>You need to login</h1>
+    <h2><a href="/login">login</a></h2>
+    {% endif %}
+    <script>
+        $(".circle-profile-menu").hide()
+        $(document).ready(function () {
+            $(".circle-profile").click(() => {
+                $(".circle-profile-menu").toggle();
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See Product</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='product.css') }}">
+</head>
+<body>
+    <img src="/uploads/images/{{ product.image }}" alt="here is image" width="600" height="600">
+    <h1>Product Name: {{ product.name }}</h1>
+    <h1>Price: {{ product.price }}</h1>
+    <h1>Description: {{ product.short_description }}</h1>
+</body>
+</html>
