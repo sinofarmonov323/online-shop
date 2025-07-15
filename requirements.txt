@@ -4,6 +4,6 @@ flask-login
 flask-sqlalchemy
 flask-wtf
 flask-admin
-wtforms
+wtforms==2.3.3
 flask-cors
 gunicorn
