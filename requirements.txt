@@ -1,0 +1,8 @@
+flask
+flask-admin
+flask-login
+flask-sqlalchemy
+flask-wtf
+flask-admin
+wtforms
+flask-cors
